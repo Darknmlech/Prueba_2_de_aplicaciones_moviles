@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         val etEmail = findViewById<EditText>(R.id.etEmail)
         val etPassword = findViewById<EditText>(R.id.etPassword)
         val btnLogin = findViewById<Button>(R.id.btnLogin)
+        val btnRegistrar = findViewById<Button>(R.id.btnRegistrar)
 
         btnLogin.setOnClickListener {
             val email = etEmail.text.toString().trim()
@@ -51,6 +52,11 @@ class MainActivity : AppCompatActivity() {
                         Toast.makeText(this, "Error de acceso: ${task.exception?.message}", Toast.LENGTH_LONG).show()
                     }
                 }
+        }
+
+        btnRegistrar.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
         }
     }
 }
